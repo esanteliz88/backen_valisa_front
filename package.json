@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend para el frontend de Valisa",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "kill-port": "npx kill-port 6000",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "kill-port": "npx kill-port 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

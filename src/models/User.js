@@ -17,6 +17,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  companyId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Company',
+    required: true
+  },
   companyName: {
     type: String,
     required: true,
@@ -24,8 +29,30 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['admin', 'user'],
+    enum: ['admin', 'user', 'company_admin'],
     default: 'user'
+  },
+  permissions: {
+    createUser: {
+      type: Boolean,
+      default: false
+    },
+    editUser: {
+      type: Boolean,
+      default: false
+    },
+    deleteUser: {
+      type: Boolean,
+      default: false
+    },
+    viewUsers: {
+      type: Boolean,
+      default: true
+    }
+  },
+  isActive: {
+    type: Boolean,
+    default: true
   },
   createdAt: {
     type: Date,
